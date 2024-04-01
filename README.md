@@ -49,8 +49,7 @@ Note: `tie_encoder_decoder=True` initializes BETOShare or RoBERTaShare.
 ### Fine-tuning
 To fine-tune BARTO, T5S, and LEDO, we rely on HuggingFace examples for [summarization](https://github.com/huggingface/transformers/tree/main/examples/pytorch/summarization) and [translation](https://github.com/huggingface/transformers/tree/main/examples/pytorch/translation).
 
-For tasks like generative question-answering, split-and-rephrase, and dialogue, we implemented additional scripts found in this repository.
-
+For tasks like generative question-answering, split-and-rephrase, and dialogue, we implemented additional [scripts found in this repository](https://github.com/vgaraujov/Seq2Seq-Spanish-PLMs/tree/main/scripts).
 Additionally, we implemented the script versions to experiment with BERT2BERT-style models, which are also found in this repository.
 
 We include experiment files that you can run to replicate our results. For example, running:
