@@ -1,0 +1,176 @@
+# T5S experiments
+
+python text-classification/run_glues_text2text.py \
+    --model_name_or_path vgaraujov/t5-base-spanish \
+    --do_train \
+    --do_eval \
+    --dataset_name paws-x \
+    --dataset_config "es" \
+    --input_column 'sentence1_sentence2' \
+    --output_column label \
+    --output_dir output_t5_pawx \
+    --max_source_length 128 \
+    --max_target_length 2 \
+    --val_max_target_length 2 \
+    --generation_max_length 2 \
+    --per_device_train_batch_size 4 \
+    --per_device_eval_batch_size 4 \
+    --overwrite_output_dir \
+    --do_predict \
+    --predict_with_generate \
+    --num_train_epochs 6 \
+    --save_steps 10000 \
+    --eval_steps 10000 \
+    --logging_steps 10000 \
+    --save_strategy "steps" \
+    --save_total_limit 3 \
+    --evaluation_strategy "steps" \
+    --load_best_model_at_end
+
+python text-classification/run_glues_text2text.py \
+    --model_name_or_path vgaraujov/t5-base-spanish \
+    --do_train \
+    --do_eval \
+    --dataset_name xnli \
+    --dataset_config "es" \
+    --input_column 'premise_hypothesis' \
+    --output_column label \
+    --output_dir output_t5_xnli \
+    --max_source_length 128 \
+    --max_target_length 2 \
+    --val_max_target_length 2 \
+    --generation_max_length 2 \
+    --per_device_train_batch_size 4 \
+    --per_device_eval_batch_size 4 \
+    --overwrite_output_dir \
+    --do_predict \
+    --predict_with_generate \
+    --num_train_epochs 6 \
+    --save_steps 58905 \
+    --eval_steps 58905 \
+    --logging_steps 58905 \
+    --save_strategy "steps" \
+    --save_total_limit 3 \
+    --evaluation_strategy "steps" \
+    --load_best_model_at_end
+
+python text-classification/run_glues_text2text.py \
+    --model_name_or_path vgaraujov/t5-base-spanish \
+    --do_train \
+    --do_eval \
+    --dataset_name "sts"\
+    --input_column 'sentence1_sentence2' \
+    --output_column label \
+    --output_dir output_t5_sts \
+    --max_source_length 128 \
+    --max_target_length 3 \
+    --val_max_target_length 3 \
+    --generation_max_length 3 \
+    --per_device_train_batch_size 4 \
+    --per_device_eval_batch_size 4 \
+    --overwrite_output_dir \
+    --do_predict \
+    --predict_with_generate \
+    --num_train_epochs 6 \
+    --save_steps 2000 \
+    --eval_steps 2000 \
+    --logging_steps 2000 \
+    --save_strategy "steps" \
+    --save_total_limit 3 \
+    --evaluation_strategy "steps" \
+    --load_best_model_at_end
+
+python text-classification/run_glues_text2text.py \
+    --model_name_or_path vgaraujov/t5-base-spanish \
+    --do_train \
+    --do_eval \
+    --dataset_name MLDoc \
+    --dataset_config "es" \
+    --input_column 'sentence1' \
+    --output_column label \
+    --output_dir output_t5_mldoc \
+    --max_source_length 512 \
+    --max_target_length 4 \
+    --val_max_target_length 4 \
+    --generation_max_length 4 \
+    --per_device_train_batch_size 4 \
+    --per_device_eval_batch_size 4 \
+    --overwrite_output_dir \
+    --do_predict \
+    --predict_with_generate \
+    --num_train_epochs 6 \
+    --save_steps 1419 \
+    --eval_steps 1419 \
+    --logging_steps 1419 \
+    --save_strategy "steps" \
+    --save_total_limit 3 \
+    --evaluation_strategy "steps" \
+    --load_best_model_at_end
+
+python text-classification/run_glues_text2text.py \
+    --model_name_or_path vgaraujov/t5-base-spanish \
+    --do_train \
+    --do_eval \
+    --dataset_name STR \
+    --input_column 'sentence1_sentence2' \
+    --output_column label \
+    --output_dir output_t5_str \
+    --max_source_length 128 \
+    --max_target_length 3 \
+    --val_max_target_length 3 \
+    --generation_max_length 3 \
+    --per_device_train_batch_size 4 \
+    --per_device_eval_batch_size 4 \
+    --overwrite_output_dir \
+    --do_predict \
+    --predict_with_generate \
+    --num_train_epochs 6 \
+    --save_steps 234 \
+    --eval_steps 234 \
+    --logging_steps 234 \
+    --save_strategy "steps" \
+    --save_total_limit 3 \
+    --evaluation_strategy "steps" \
+    --load_best_model_at_end
+
+# BARTO experiments
+
+python text-classification/run_glues.py \
+    --model_name_or_path vgaraujov/bart-base-spanish \
+    --do_train \
+    --do_eval \
+    --train_file "train.json" \
+    --validation_file "dev.json" \
+    --test_file "test.json" \
+    --output_dir barto_str \
+    --per_device_train_batch_size 32 \
+    --per_device_eval_batch_size 32 \
+    --max_seq_length 128 \
+    --num_train_epochs 3 \
+    --overwrite_output_dir \
+    --do_predict \
+    --logging_steps 500 \
+    --save_total_limit 2 \
+    --save_strategy "no" \
+    --evaluation_strategy "no" \
+    --load_best_model_at_end \
+    --fp16
+
+python text-classification/run_glues.py \
+    --model_name_or_path vgaraujov/bart-base-spanish \
+    --do_train \
+    --do_eval \
+    --dataset_name PlanTL-GOB-ES/sts-es \
+    --output_dir barto_sts \
+    --per_device_train_batch_size 32 \
+    --per_device_eval_batch_size 32 \
+    --max_seq_length 128 \
+    --num_train_epochs 3 \
+    --overwrite_output_dir \
+    --do_predict \
+    --logging_steps 500 \
+    --save_total_limit 2 \
+    --save_strategy "no" \
+    --evaluation_strategy "no" \
+    --load_best_model_at_end \
+    --fp16

@@ -1,0 +1,305 @@
+# T5S experiments
+
+python translation/run_translation.py \
+    --model_name_or_path vgaraujov/t5-base-spanish \
+    --dataset_name vgaraujov/wmt13 \
+    --dataset_config_name es-en \
+    --source_lang es \
+    --target_lang en \
+    --output_dir t5s_esen_wmt13 \
+    --per_device_train_batch_size 32 \
+    --per_device_eval_batch_size 32 \
+    --gradient_accumulation_steps 12 \
+    --max_train_samples 600000 \
+    --num_train_epochs 1 \
+    --max_steps 10000 \
+    --learning_rate 5e-3 \
+    --warmup_steps 40000 \
+    --do_train \
+    --do_eval \
+    --do_predict \
+    --predict_with_generate \
+    --max_target_length 128 \
+    --max_source_length 128 \
+    --load_best_model_at_end \
+    --pad_to_max_length
+
+python translation/run_translation.py \
+    --model_name_or_path vgaraujov/t5-base-spanish \
+    --dataset_name vgaraujov/wmt13 \
+    --dataset_config_name es-en \
+    --source_lang en \
+    --target_lang es \
+    --output_dir t5s_enes_wmt13 \
+    --per_device_train_batch_size 32 \
+    --per_device_eval_batch_size 32 \
+    --gradient_accumulation_steps 12 \
+    --max_train_samples 600000 \
+    --num_train_epochs 1 \
+    --max_steps 10000 \
+    --learning_rate 5e-3 \
+    --warmup_steps 40000 \
+    --do_train \
+    --do_eval \
+    --do_predict \
+    --predict_with_generate \
+    --max_target_length 128 \
+    --max_source_length 128 \
+    --load_best_model_at_end \
+    --pad_to_max_length
+
+python translation/run_translation.py \
+    --model_name_or_path vgaraujov/t5-base-spanish \
+    --dataset_name vgaraujov/fapesp \
+    --dataset_config_name es-pt \
+    --source_lang es \
+    --target_lang pt \
+    --output_dir t5s_espt_fapesp \
+    --per_device_train_batch_size 32 \
+    --per_device_eval_batch_size 32 \
+    --gradient_accumulation_steps 12 \
+    --num_train_epochs 1 \
+    --max_steps 10000 \
+    --learning_rate 5e-3 \
+    --warmup_steps 40000 \
+    --overwrite_output_dir \
+    --do_train \
+    --do_eval \
+    --do_predict \
+    --predict_with_generate \
+    --max_target_length 128 \
+    --max_source_length 128 \
+    --load_best_model_at_end \
+    --pad_to_max_length
+
+python translation/run_translation.py \
+    --model_name_or_path vgaraujov/t5-base-spanish \
+    --dataset_name vgaraujov/fapesp \
+    --dataset_config_name es-pt \
+    --source_lang pt \
+    --target_lang es \
+    --output_dir t5s_ptes_fapesp \
+    --per_device_train_batch_size 32 \
+    --per_device_eval_batch_size 32 \
+    --gradient_accumulation_steps 12 \
+    --num_train_epochs 1 \
+    --max_steps 10000 \
+    --learning_rate 5e-3 \
+    --warmup_steps 40000 \
+    --overwrite_output_dir \
+    --do_train \
+    --do_eval \
+    --do_predict \
+    --predict_with_generate \
+    --max_target_length 128 \
+    --max_source_length 128 \
+    --load_best_model_at_end \
+    --pad_to_max_length
+
+# BARTO experiments
+
+python translation/run_translation.py \
+    --model_name_or_path vgaraujov/bart-base-spanish \
+    --dataset_name vgaraujov/wmt13 \
+    --dataset_config_name es-en \
+    --source_lang en \
+    --target_lang es \
+    --output_dir barto_enes_wmt13 \
+    --per_device_train_batch_size 96 \
+    --per_device_eval_batch_size 96 \
+    --gradient_accumulation_steps 4 \
+    --max_train_samples 600000 \
+    --num_train_epochs 1 \
+    --max_steps 5000 \
+    --learning_rate 5e-3 \
+    --warmup_steps 40000 \
+    --do_train \
+    --do_eval \
+    --do_predict \
+    --predict_with_generate \
+    --max_target_length 128 \
+    --max_source_length 128 \
+    --load_best_model_at_end \
+    --pad_to_max_length
+
+python translation/run_translation.py \
+    --model_name_or_path vgaraujov/bart-base-spanish \
+    --dataset_name vgaraujov/wmt13 \
+    --dataset_config_name es-en \
+    --source_lang es \
+    --target_lang en \
+    --output_dir barto_esen_wmt13 \
+    --per_device_train_batch_size 96 \
+    --per_device_eval_batch_size 96 \
+    --gradient_accumulation_steps 4 \
+    --max_train_samples 600000 \
+    --num_train_epochs 1 \
+    --max_steps 5000 \
+    --learning_rate 5e-3 \
+    --warmup_steps 40000 \
+    --do_train \
+    --do_eval \
+    --do_predict \
+    --predict_with_generate \
+    --max_target_length 128 \
+    --max_source_length 128 \
+    --load_best_model_at_end \
+    --pad_to_max_length
+
+python translation/run_translation.py \
+    --model_name_or_path vgaraujov/bart-base-spanish \
+    --dataset_name vgaraujov/fapesp \
+    --dataset_config_name es-pt \
+    --source_lang es \
+    --target_lang pt \
+    --output_dir barto_espt_fapesp \
+    --per_device_train_batch_size 96 \
+    --per_device_eval_batch_size 96 \
+    --gradient_accumulation_steps 4 \
+    --num_train_epochs 1 \
+    --max_steps 5000 \
+    --learning_rate 5e-3 \
+    --warmup_steps 40000 \
+    --do_train \
+    --do_eval \
+    --do_predict \
+    --predict_with_generate \
+    --max_target_length 128 \
+    --max_source_length 128 \
+    --load_best_model_at_end \
+    --pad_to_max_length
+
+python translation/run_translation.py \
+    --model_name_or_path vgaraujov/bart-base-spanish \
+    --dataset_name vgaraujov/fapesp \
+    --dataset_config_name es-pt \
+    --source_lang pt \
+    --target_lang es \
+    --output_dir barto_ptes_fapesp \
+    --per_device_train_batch_size 96 \
+    --per_device_eval_batch_size 96 \
+    --gradient_accumulation_steps 4 \
+    --num_train_epochs 1 \
+    --max_steps 5000 \
+    --learning_rate 5e-3 \
+    --warmup_steps 40000 \
+    --do_train \
+    --do_eval \
+    --do_predict \
+    --predict_with_generate \
+    --max_target_length 128 \
+    --max_source_length 128 \
+    --load_best_model_at_end \
+    --pad_to_max_length
+
+# BERT2BERT-style experiments
+
+python translation/run_translation_leverage.py \
+    --model_name_or_path bert-base-multilingual-cased  \
+    --do_train \
+    --do_eval \
+    --dataset_name vgaraujov/wmt13 \
+    --dataset_config_name es-en \
+    --source_lang es \
+    --target_lang en \
+    --output_dir mbert2mbert_wmt13_untied_esen \
+    --tie_encoder_decoder False \
+    --per_device_train_batch_size 16 \
+    --per_device_eval_batch_size 16 \
+    --max_train_samples 600000 \
+    --num_train_epochs 6 \
+    --overwrite_output_dir \
+    --do_predict \
+    --predict_with_generate \
+    --save_strategy "steps" \
+    --evaluation_strategy "steps" \
+    --save_steps 10000 \
+    --eval_steps 5000 \
+    --logging_steps 500 \
+    --save_total_limit 3 \
+    --load_best_model_at_end True \
+    --max_target_length 128 \
+    --max_source_length 128 \
+    --fp16
+
+python translation/run_translation_leverage.py \
+    --model_name_or_path bert-base-multilingual-cased  \
+    --do_train \
+    --do_eval \
+    --dataset_name vgaraujov/wmt13 \
+    --dataset_config_name es-en \
+    --source_lang es \
+    --target_lang en \
+    --output_dir mbert2mbert_wmt13_tied_esen \
+    --tie_encoder_decoder True \
+    --per_device_train_batch_size 16 \
+    --per_device_eval_batch_size 16 \
+    --max_train_samples 600000 \
+    --num_train_epochs 6 \
+    --overwrite_output_dir \
+    --do_predict \
+    --predict_with_generate \
+    --save_strategy "steps" \
+    --evaluation_strategy "steps" \
+    --save_steps 10000 \
+    --eval_steps 5000 \
+    --logging_steps 500 \
+    --save_total_limit 3 \
+    --load_best_model_at_end True \
+    --max_target_length 128 \
+    --max_source_length 128 \
+    --fp16
+
+python translation/run_translation_leverage.py \
+    --model_name_or_path bert-base-multilingual-cased  \
+    --do_train \
+    --do_eval \
+    --dataset_name vgaraujov/fapesp \
+    --dataset_config_name es-pt \
+    --source_lang pt \
+    --target_lang es \
+    --output_dir mbert2mbert_fapesp_untied_ptes \
+    --tie_encoder_decoder False \
+    --per_device_train_batch_size 16 \
+    --per_device_eval_batch_size 16 \
+    --num_train_epochs 6 \
+    --overwrite_output_dir \
+    --do_predict \
+    --predict_with_generate \
+    --save_strategy "steps" \
+    --evaluation_strategy "steps" \
+    --save_steps 10000 \
+    --eval_steps 5000 \
+    --logging_steps 500 \
+    --save_total_limit 3 \
+    --load_best_model_at_end True \
+    --max_target_length 128 \
+    --max_source_length 128 \
+    --fp16
+
+python translation/run_translation_leverage.py \
+    --model_name_or_path bert-base-multilingual-cased  \
+    --do_train \
+    --do_eval \
+    --dataset_name vgaraujov/fapesp \
+    --dataset_config_name es-pt \
+    --source_lang es \
+    --target_lang pt \
+    --output_dir mbert2mbert_fapesp_tied_espt \
+    --tie_encoder_decoder True \
+    --per_device_train_batch_size 16 \
+    --per_device_eval_batch_size 16 \
+    --num_train_epochs 6 \
+    --overwrite_output_dir \
+    --do_predict \
+    --predict_with_generate \
+    --save_strategy "steps" \
+    --evaluation_strategy "steps" \
+    --save_steps 10000 \
+    --eval_steps 5000 \
+    --logging_steps 500 \
+    --save_total_limit 3 \
+    --load_best_model_at_end True \
+    --max_target_length 128 \
+    --max_source_length 128 \
+    --fp16
