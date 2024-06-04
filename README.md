@@ -61,12 +61,27 @@ bash run_summarization.sh
 
 If you find this repository useful for your research, please consider citing our paper: 
 ```
-@misc{araujo2024sequencetosequence,
-      title={Sequence-to-Sequence Spanish Pre-trained Language Models}, 
-      author={Vladimir Araujo and Maria Mihaela Trusca and Rodrigo Tufiño and Marie-Francine Moens},
-      year={2024},
-      eprint={2309.11259},
-      archivePrefix={arXiv},
-      primaryClass={cs.CL}
+@inproceedings{araujo-etal-2024-sequence-sequence,
+    title = "Sequence-to-Sequence {S}panish Pre-trained Language Models",
+    author = "Araujo, Vladimir  and
+      Trusca, Maria Mihaela  and
+      Tufi{\~n}o, Rodrigo  and
+      Moens, Marie-Francine",
+    editor = "Calzolari, Nicoletta  and
+      Kan, Min-Yen  and
+      Hoste, Veronique  and
+      Lenci, Alessandro  and
+      Sakti, Sakriani  and
+      Xue, Nianwen",
+    booktitle = "Proceedings of the 2024 Joint International Conference on Computational Linguistics, Language Resources and Evaluation (LREC-COLING 2024)",
+    month = may,
+    year = "2024",
+    address = "Torino, Italia",
+    publisher = "ELRA and ICCL",
+    url = "https://aclanthology.org/2024.lrec-main.1283",
+    pages = "14729--14743",
 }
 ```
+
+### Acknowledgements
+This work was funded by the European Research Council Advanced Grant 788506 and supported by the Google Cloud Research Credits program (GCP) and TPU Research Cloud program (TRC).
