@@ -388,12 +388,14 @@ def main():
                 "mlqa-translate-train.es",
                 cache_dir=model_args.cache_dir,
                 use_auth_token=True if model_args.use_auth_token else None,
+                trust_remote_code=True,
             )
             dataset2 = load_dataset(
                 data_args.dataset_name,
                 "mlqa.es.es",
                 cache_dir=model_args.cache_dir,
                 use_auth_token=True if model_args.use_auth_token else None,
+                trust_remote_code=True,
             )
             raw_datasets = DatasetDict({"train":dataset1['train'], "test":dataset2['test'], "validation":dataset2['validation']})
         else:
@@ -402,6 +404,7 @@ def main():
                 data_args.dataset_config_name,
                 cache_dir=model_args.cache_dir,
                 use_auth_token=True if model_args.use_auth_token else None,
+                trust_remote_code=True,
             )
     else:
         data_files = {}

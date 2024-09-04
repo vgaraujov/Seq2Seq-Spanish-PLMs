@@ -401,8 +401,20 @@ def main():
         # Downloading and loading a dataset from the hub.
         if data_args.dataset_name == "mlqa":
             from datasets import DatasetDict
-            dataset1 = load_dataset(data_args.dataset_name, "mlqa-translate-train.es", cache_dir=model_args.cache_dir, token=model_args.token)
-            dataset2 = load_dataset(data_args.dataset_name, "mlqa.es.es", cache_dir=model_args.cache_dir, token=model_args.token)
+            dataset1 = load_dataset(
+                data_args.dataset_name, 
+                "mlqa-translate-train.es", 
+                cache_dir=model_args.cache_dir, 
+                token=model_args.token,
+                trust_remote_code=True,
+            )
+            dataset2 = load_dataset(
+                data_args.dataset_name, 
+                "mlqa.es.es", 
+                cache_dir=model_args.cache_dir, 
+                token=model_args.token,
+                trust_remote_code=True,
+            )
             raw_datasets = DatasetDict({"train":dataset1['train'], "test":dataset2['test'], "validation":dataset2['validation']})
         else:
             raw_datasets = load_dataset(
@@ -410,6 +422,7 @@ def main():
                 data_args.dataset_config_name,
                 cache_dir=model_args.cache_dir,
                 token=model_args.token,
+                trust_remote_code=True,
             )
     else:
         data_files = {}
